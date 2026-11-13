@@ -12,6 +12,11 @@ While pre-1.0, the minor version is bumped for breaking changes.
 
 ### Added
 
+- Horizontal scrolling in `TextEditor`. The view now follows the caret
+  sideways along a line wider than the field, and a trackpad's horizontal
+  scroll moves it. `TextEditor::with_horizontal_scrollbar(true)` (or
+  `set_horizontal_scrollbar`) adds a scrollbar along the bottom edge, with a
+  blank square in the corner where it meets the vertical one. (#101)
 - Undo and redo in `TextEditor`: Ctrl+Z takes back the last edit and
   Ctrl+Shift+Z (or Ctrl+Y) restores it, with ⌘ in Ctrl's place on macOS —
   where ⌘Y is left alone. `undo()`, `redo()`, `can_undo()` and `can_redo()`
@@ -23,6 +28,12 @@ While pre-1.0, the minor version is bumped for breaking changes.
   change — for output and log boxes. It still takes the focus and keeps its
   caret; `set_text` keeps working. Its paper is tinted a touch towards the
   theme's `face`, to tell it from an editable box. (#99)
+
+### Fixed
+
+- `TextEditor` painted a line wider than the field straight across its right
+  border, the scrollbar and whatever lay beyond. Text is now clipped to the
+  inside of the field. (#101)
 
 ## [0.9.0] - 2026-11-16
 
