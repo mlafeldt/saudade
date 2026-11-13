@@ -25,6 +25,10 @@ While pre-1.0, the minor version is bumped for breaking changes.
   is one step; the history holds a thousand steps and is forgotten by
   `set_text`. The notepad example's Undo and Redo items now work.
 
+- `TextEditor::delete`, `has_selection` and `is_empty`, the rest of what an
+  Edit menu needs: Delete removes the selection without going through the
+  clipboard, and the two queries tell the menu which items to grey.
+
 - `TextEditor::with_read_only` / `set_read_only` / `is_read_only`: a
   read-only editor shows text the user can select, copy and scroll but not
   change — for output and log boxes. It still takes the focus and keeps its
